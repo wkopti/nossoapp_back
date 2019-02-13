@@ -17,6 +17,8 @@ const login = (req, res, next) => {
   const email = req.body.email || ''
   const password = req.body.password || ''
   
+  console.log("passou por aqui")
+
   User.findOne({email}, (err, user) => {
     if(err) {
       return sendErrorsFromDB(res, err)

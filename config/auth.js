@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
 	} else {
 		const token = req.body.token || req.query.token || req.headers['authorization']
 		if(!token){
-			return res.status(403).send({errors: ['Token nao dinsponivel']})
+			return res.status(403).send({errors: ['Token nao disponivel']})
 		}
 
 		jwt.verify(token, env.authSecret, function(err, decoded) {
