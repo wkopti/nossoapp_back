@@ -12,6 +12,8 @@ module.exports = function (server) {
 	openApi.post('/signup', AuthService.signup)
 	openApi.post('/validateToken', AuthService.validateToken)
 	
+	const TramitadorService = require('../api/tramitador/tramitadorService')
+	TramitadorService.register(openApi, '/tramitador')
 	//Rotas protegidas
 	//const protectedApi = express.Router()
 	//server.use('/api', protectedApi)
