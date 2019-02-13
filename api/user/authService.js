@@ -66,7 +66,7 @@ const signup = (req, res, next) => {
   User.findOne({email}, (err, user) => {
     if(err) {
       return sendErrorsFromDB(res, err)        
-    } elseif (user) {
+    } else if (user) {
       return res.status(400).send({errors: ['Usuário já cadastrado.']})        
     } else {
       const newUser = new User({ name, email, password: passwordHash })            

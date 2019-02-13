@@ -1,7 +1,7 @@
 const restful = require('node-restful')
-const mongoose = restful.mongooseconst 
+const mongoose = restful.mongoose 
 
-cont userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   	name: { type: String, required: true },
   	email: { type: String, required: true },
   	password: { type: String, min: 6, max: 12, required: true }
